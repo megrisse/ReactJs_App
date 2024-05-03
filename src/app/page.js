@@ -6,7 +6,13 @@ import React from "react";
 
  function App() {
      const [signIn, toggle] = React.useState(true);
-      return(
+
+     function RedirectToOAuth() {
+
+        window.location.href = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-9cee2e9030dd9a1da9e02120bb26ac7abf940260ed9ba7ae8a0c75381779704d&redirect_uri=http%3A%2F%2Flocalhost%3A4000%2Fauth%2F42%2Fcallback&response_type=code"
+     }
+      
+     return(
           <Components.Container>
               <Components.SignUpContainer signinIn={signIn}>
                   <Components.Form>
@@ -23,7 +29,9 @@ import React from "react";
                        <Components.Title>Sign in</Components.Title>
                        <Components.Input type='email' placeholder='Email' />
                        <Components.Input type='password' placeholder='Password' />
-                            <Components.Button href="http://localhost:4000/auth/42">Log In With your intra</Components.Button>
+                       <Components.Button>
+                            <Components.Anchor1 href="https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-9cee2e9030dd9a1da9e02120bb26ac7abf940260ed9ba7ae8a0c75381779704d&redirect_uri=http%3A%2F%2Flocalhost%3A4000%2Fauth%2F42%2Fcallback&response_type=code"> Log In with your Intra </Components.Anchor1>
+                       </Components.Button>
                        <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
                        <Components.Button>Sigin In</Components.Button>
                    </Components.Form>
